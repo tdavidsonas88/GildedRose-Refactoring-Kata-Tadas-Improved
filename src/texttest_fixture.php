@@ -31,5 +31,7 @@ for ($i = 0; $i < $days; $i++) {
         echo $item . PHP_EOL;
     }
     echo PHP_EOL;
+    
+    // At the end of each day our system lowers both values for every item
     $app->update_quality();
 }
