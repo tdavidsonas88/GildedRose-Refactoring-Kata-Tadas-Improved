@@ -10,11 +10,17 @@ class GildedRose {
 
     function update_quality() {
         foreach ($this->items as $item) {
-            if ($item->name != 'Aged Brie' and $item->name != 'Backstage passes to a TAFKAL80ETC concert') {
+            if ($item->name != 'Aged Brie' and 
+                $item->name != 'Backstage passes to a TAFKAL80ETC concert' 
+                ) {
                 // The Quality of an item is never negative
                 if ($item->quality > 0) {
                     // "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
                     if ($item->name != 'Sulfuras, Hand of Ragnaros') {
+                        $item->quality = $item->quality - 1;
+                    }
+                    // 	- "Conjured" items degrade in Quality twice as fast as normal items
+                    if($item->name == 'Conjured'){
                         $item->quality = $item->quality - 1;
                     }
                 }
