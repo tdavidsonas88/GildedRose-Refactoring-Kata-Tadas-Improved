@@ -5,3 +5,6 @@
 /config
 /description
 /HEAD
+/composer.lock
+**/vendor
+/.phpunit.result.cache

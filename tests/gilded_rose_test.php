@@ -1,8 +1,11 @@
 <?php
+declare(strict_types=1);
 
-require_once 'gilded_rose.php';
+require_once __DIR__.'/../src/gilded_rose.php';
 
-class GildedRoseTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+final class GildedRoseTest extends TestCase {
 
     function testFoo() {
         $items = array(new Item("foo", 0, 0));
