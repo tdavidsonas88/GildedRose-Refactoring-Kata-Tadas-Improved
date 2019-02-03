@@ -26,13 +26,12 @@ class GildedRose {
                 }
             } else {
                 // The Quality of an item is never more than 50
-
                 if ($item->quality < 50) {
                     // "Aged Brie" actually increases in Quality the older it gets
                     // "Backstage passes", like aged brie, increases in Quality as its SellIn value approaches;
                     $item->quality = $item->quality + 1;
+
                     //Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
-	               
                     if ($item->name == 'Backstage passes to a TAFKAL80ETC concert') {
                         if ($item->sell_in < 11) {
                             if ($item->quality < 50) {
@@ -68,7 +67,9 @@ class GildedRose {
                     } else {
                         $item->quality = $item->quality - $item->quality;
                     }
-                } else {
+                } 
+                //  'Aged Brie' increases by Two in quality after sell_in finished
+                else {
                     // The Quality of an item is never more than 50
                     if ($item->quality < 50) {
                         // "Aged Brie" actually increases in Quality the older it gets
