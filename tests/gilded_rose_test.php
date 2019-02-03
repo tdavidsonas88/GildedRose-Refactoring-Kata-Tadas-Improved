@@ -83,6 +83,7 @@ final class GildedRoseTest extends TestCase {
             new Item("Aged Brie", 2, 50),
             new Item("Sulfuras, Hand of Ragnaros", 2, 50),
             new Item("Backstage passes to a TAFKAL80ETC concert", 2, 50),
+            new Item("Conjured Mana Cake", 2, 50),
         );
 
         $gildedRose = new GildedRose($items);
@@ -92,11 +93,13 @@ final class GildedRoseTest extends TestCase {
         $this->assertEquals(50, $items[1]->quality);
         $this->assertEquals(50, $items[2]->quality);
         $this->assertEquals(50, $items[3]->quality);
+        $this->assertEquals(48, $items[4]->quality);
 
         $gildedRose->update_quality();
         $this->assertEquals(50, $items[1]->quality);
         $this->assertEquals(50, $items[2]->quality);
         $this->assertEquals(50, $items[3]->quality);
+        $this->assertEquals(46, $items[4]->quality);
     }
 
     // - "Sulfuras", being a legendary item, never has to be sold or decreases in Quality
