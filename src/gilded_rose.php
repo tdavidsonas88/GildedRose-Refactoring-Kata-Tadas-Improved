@@ -20,7 +20,7 @@ class GildedRose {
                         $item->quality = $item->quality - 1;
                     }
                     // 	- "Conjured" items degrade in Quality twice as fast as normal items
-                    if($item->name == 'Conjured'){
+                    if($item->name == 'Conjured Mana Cake'){
                         $item->quality = $item->quality - 1;
                     }
                 }
